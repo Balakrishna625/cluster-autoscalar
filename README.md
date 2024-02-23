@@ -32,7 +32,7 @@ kubectl -n kube-system edit deployment.apps/cluster-autoscaler
         - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/<YOUR CLUSTER NAME>
 
 # After Change
-        - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eksdemo1
+        - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/arbdemo
 ```
 
 - **Add two more parameters**
@@ -51,7 +51,7 @@ kubectl -n kube-system edit deployment.apps/cluster-autoscaler
         - --cloud-provider=aws
         - --skip-nodes-with-local-storage=false
         - --expander=least-waste
-        - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eksdemo1
+        - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/arbdemo
         - --balance-similar-node-groups
         - --skip-nodes-with-system-pods=false
 ```
@@ -64,7 +64,7 @@ kubectl -n kube-system edit deployment.apps/cluster-autoscaler
 
 
 # Update Cluster Autoscaler Image Version
-kubectl -n kube-system set image deployment.apps/cluster-autoscaler cluster-autoscaler=us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.29.0
+kubectl -n kube-system set image deployment.apps/cluster-autoscaler cluster-autoscaler=us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.27.5
 ```
 
 ## Step-06: Verify Image version got updated
