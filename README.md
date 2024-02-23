@@ -61,13 +61,10 @@ kubectl -n kube-system edit deployment.apps/cluster-autoscaler
 - Find our release version (example: 1.16.n) and update the same. 
 - Our Cluster version is 1.16 and our cluster autoscaler version is 1.16.5 as per above releases link 
 ```
-# Template
-# Update Cluster Autoscaler Image Version
-kubectl -n kube-system set image deployment.apps/cluster-autoscaler cluster-autoscaler=us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.XY.Z
 
 
 # Update Cluster Autoscaler Image Version
-kubectl -n kube-system set image deployment.apps/cluster-autoscaler cluster-autoscaler=us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.16.5
+kubectl -n kube-system set image deployment.apps/cluster-autoscaler cluster-autoscaler=us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler:v1.29.0
 ```
 
 ## Step-06: Verify Image version got updated
